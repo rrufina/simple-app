@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  app:
+    image: rrufina/name-app
+    ports:
+      - 5000:5000
+  nginx:
+    depends_on:
+      - "app"
+    image: rrufina/nginx-test:5000
+    ports:
+      - 80:80

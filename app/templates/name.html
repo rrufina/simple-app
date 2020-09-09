@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 {% block content %}
-<h1>Give the girl a compliment</h1>
-<form action="" method="POST">
+
+<!--<form action="" method="POST">
     {{ form.hidden_tag() }}
     <p>
         {{ form.name.label }}<br>
@@ -14,5 +14,33 @@
         {{ form.submit() }}
     </p>
     
-</form>
+</form>-->
+
+
+    <div class="container">
+        <div class="img">
+            <img src="{{ url_for( 'static', filename='compliment.jpg', v=1)}}">
+        </div>
+        <div class="login-container">
+            <form action="" method="POST">
+                {{ form.hidden_tag() }}
+                <img class="avatar" src="{{ url_for( 'static', filename='girl.png', v=1)}}">
+                <h2>Give the girl a compliment</h2>
+                <div class="input-div one">
+                    <div>
+                        <h5>{{ form.name.label }}<br></h5>
+                        <p>
+                            {{ form.name(size=32) }}<br>   
+                        </p>
+                        
+                        {% for error in form.name.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
 {% endblock %}

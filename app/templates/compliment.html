@@ -1,5 +1,11 @@
 {% extends "index.html" %}
 {% block content %}
+<nav>
+    <label class="logo">Distributed Systems Assignment 1</label>
+    <ul>
+		<li><a href="{{ url_for('back') }}">Back</a></li>
+	</ul>
+</nav>
 <div class='compliment'>
 	<div class='letters'>
 		{% for n in name %}

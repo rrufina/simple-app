@@ -32,5 +32,9 @@ def get_compliment():
         name_dict.append(pair)
     return render_template('compliment.html', name=name_dict)
 
+@app.route('/', methods=['GET', 'POST'])
+def back():
+    return render_template('name.html', form=form)
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0")

@@ -15,7 +15,9 @@
     </p>
     
 </form>-->
-
+<nav>
+    <label class="logo">Distributed Systems Assignment 1</label>
+</nav>
 
     <div class="container">
         <div class="img">
@@ -31,7 +33,9 @@
                         <h5>{{ form.name.label }}<br></h5>
                         <p>
                             {{ form.name(size=32) }}<br>   
+
                         </p>
+                        
                         
                         {% for error in form.name.errors %}
                         <span style="color: red;">[{{ error }}]</span>
